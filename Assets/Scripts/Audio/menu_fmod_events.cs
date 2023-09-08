@@ -11,7 +11,7 @@ public class menu_fmod_events : MonoBehaviour
 
     public static menu_fmod_events instance { get; private set; }
 
-    private void awake()
+    private void Awake()
     {
         if(instance != null)
         {

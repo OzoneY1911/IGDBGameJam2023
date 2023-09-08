@@ -12,6 +12,14 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
+      : Any
+    second:
+      enabled: 0
+      settings:
+        Exclude WebGL: 0
+        Exclude Win: 0
+        Exclude Win64: 1
+  - first:
       Any: 
     second:
       enabled: 0
@@ -22,9 +30,15 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: x86
+        DefaultValueInitialized: true
         OS: Windows
   - first:
       Standalone: Win
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      WebGL: WebGL
     second:
       enabled: 1
       settings: {}

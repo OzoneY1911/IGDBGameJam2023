@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Note : MonoBehaviour
 {
-
     [Header("Position")]
     [SerializeField] Vector2 startPoint;
     [SerializeField] Vector2 endPoint;
@@ -36,6 +37,7 @@ public class Note : MonoBehaviour
         if (transform.position == new Vector3(endPoint.x, endPoint.y, 0))
         {
             gameObject.SetActive(false);
+            BulletSpawner.instance.AddBulletToPool(gameObject);
         }
     }
 
