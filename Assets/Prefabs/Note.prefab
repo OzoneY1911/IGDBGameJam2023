@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83397c1e7d523d94688a6d3f853a009d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 0}
+  startPoint: {x: 5, y: 0}
   endPoint: {x: 0, y: 0}
   shiftStartPointX: 0
   noteSpeed: 5
