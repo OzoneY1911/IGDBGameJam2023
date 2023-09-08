@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject arcCenter;
     Quaternion originalRotation;
 
+    [SerializeField] float rotationSpeed = 0.25f;
+
     float rotationAngle = 0;
     float maximalAngle = 60;
 
@@ -27,11 +29,11 @@ public class PlayerMovement : MonoBehaviour
         // Move up if angle is > -90 and move down if angle is < 90
         if (Input.GetKey(KeyCode.S) && rotationAngle > -maximalAngle)
         {
-            Move(-0.5f);
+            Move(-rotationSpeed);
         }
         else if (Input.GetKey(KeyCode.W) && rotationAngle < maximalAngle)
         {
-            Move(0.5f);
+            Move(rotationSpeed);
         }
     }
 
