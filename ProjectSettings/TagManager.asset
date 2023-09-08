@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Spawner
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3280529529
+    locked: 0
+  - name: Death
+    uniqueID: 803693223
     locked: 0

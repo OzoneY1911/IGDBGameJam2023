@@ -17,15 +17,15 @@ public class Note : MonoBehaviour
     [Header("Note Size")]
     [SerializeField] float noteSize = 1f;
 
-    void OnEnable()
+    void OnEnabled()
     {
         transform.localScale = new Vector3(noteSize, noteSize, noteSize);
 
         startPoint.x -= shiftStartPointX;
         transform.position = startPoint;
-    }
+	}
 
-    void Update()
+	void Update()
     {
         // Move between two points
         if (gameObject.activeSelf)

@@ -20,8 +20,8 @@ MonoBehaviour:
   PlayerMovementCentre: {x: -5.81, y: -1.16}
   LeftBoundOfPlayingField: -8
   bulletPatterns:
-  - BeatWhenReachPlayer: 20
+  - BeatWhenReachPlayer: 10
     MicroBeatWhenReachPlayer: 0
-    Speed: 10
+    Speed: 5
     Size: 1
     CentreSideDeviation: 0
