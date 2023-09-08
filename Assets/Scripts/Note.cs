@@ -6,8 +6,7 @@ using UnityEngine.Events;
 
 public class Note : MonoBehaviour
 {
-
-	[Header("Position")]
+    [Header("Position")]
     [SerializeField] Vector2 startPoint;
     [SerializeField] Vector2 endPoint;
     [SerializeField] float shiftStartPointX;
