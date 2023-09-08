@@ -17,7 +17,7 @@ public class Note : MonoBehaviour
     [Header("Note Size")]
     [SerializeField] float noteSize = 1f;
 
-    void OnEnabled()
+    void OnEnable()
     {
         transform.localScale = new Vector3(noteSize, noteSize, noteSize);
 
