@@ -23,9 +23,9 @@ public class Note : MonoBehaviour
 
         startPoint.x -= shiftStartPointX;
         transform.position = startPoint;
-    }
+	}
 
-    void Update()
+	void Update()
     {
         // Move between two points
         if (gameObject.activeSelf)

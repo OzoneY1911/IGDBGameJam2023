@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.SceneManagement;
 using static BulletPatterns;
 
 public class BulletSpawner : MonoBehaviour
@@ -9,8 +11,9 @@ public class BulletSpawner : MonoBehaviour
 	[SerializeField] private GameObject _BulletPrefab;
 	[SerializeField] private BulletPatterns _BulletPatterns;
 	private ObjectPool<GameObject> BulletsPool;
+	private float StartTime;
 
-    void Awake()
+	void Awake()
     {
 		instance = this;
     }
@@ -18,11 +21,16 @@ public class BulletSpawner : MonoBehaviour
     void Start()
 	{
 		BulletsPool = new ObjectPool<GameObject>(() => Instantiate(_BulletPrefab));
+		StartTime = Time.time;
+		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
+		{
+			bulletPattern.IsSpawned = false;
+		}
 	}
 
 	void Update()
     {
-		float CurrentTime = Time.time * 1000;
+		float CurrentTime = Time.time * 1000 - StartTime * 1000;
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
 		{
 			if (IsNeedToSpawn(bulletPattern, CurrentTime))
