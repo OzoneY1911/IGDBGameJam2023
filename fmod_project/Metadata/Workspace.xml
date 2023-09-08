@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="Workspace" id="{7cc7cfa4-89ce-44f3-b796-55d4cf1b0122}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../unity_projects/IGDBGameJam2023/Assets/fmod_banks</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{c59974be-ee07-44a8-bf90-49e3bd31dc83}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{5a258241-5df7-4c70-b266-ece055263189}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{cb38e439-5108-43a6-bc8b-79a00051a89a}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{bea52dfb-f963-450e-bce4-f9d78e5a3a8c}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{8b38b252-b2fa-4a7c-ace1-882d5bb8a496}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{0a311514-e475-4230-9cca-103e2deb23a7}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{530c3871-7ca0-4e4e-bde7-e563d2dcb374}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{70596540-9407-46d9-bd57-9c3915427d80}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{90b4fadc-fc0f-4d01-bb1d-33cd4afe5dbf}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{17732acc-8c89-4622-89df-1288cee67ebe}</destination>
+		</relationship>
+	</object>
+</objects>
