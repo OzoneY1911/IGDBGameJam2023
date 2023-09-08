@@ -101,3 +101,4 @@ MonoBehaviour:
   endPoint: {x: 0, y: 0}
   shiftStartPointX: 0
   noteSpeed: 5
+  noteSize: 1

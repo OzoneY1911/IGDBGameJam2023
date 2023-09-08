@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Note : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class Note : MonoBehaviour
         if (transform.position == new Vector3(endPoint.x, endPoint.y, 0))
         {
             gameObject.SetActive(false);
+            GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletSpawner>().AddBulletToPool(this.gameObject);
         }
     }
 

@@ -64,6 +64,8 @@ public class BulletPatterns : ScriptableObject
 
 		// end position of the bullet
 		[NonSerialized] public Vector2 EndPosition;
+
+		[NonSerialized] public bool IsSpawned = false;
 	}
 
 	// calls on start

@@ -20,18 +20,25 @@ public class BulletSpawner : MonoBehaviour
 		{
 			if (IsNeedToSpawn(bulletPattern, CurrentTime))
 			{
-				
+				bulletPattern.IsSpawned = true;
+				GameObject NewBullet = BulletsPool.Get();
+				NewBullet.GetComponent<Note>().Init(bulletPattern.StartTransform, bulletPattern.EndPosition, CalculateDeviationFromStart(bulletPattern, CurrentTime), bulletPattern.Speed, bulletPattern.Size);
 			}
 		}
     }
 
+	public void AddBulletToPool(GameObject Bullet)
+	{
+		BulletsPool.Release(Bullet);
+	}
+
 	private float CalculateDeviationFromStart(in BulletPattern Pattern, in float CurrentTime)
 	{
-		return (CurrentTime - Pattern.TimeWhenReleased) * Pattern.Speed;
+		return (CurrentTime - Pattern.TimeWhenReleased) / Pattern.Speed;
 	}
 
 	private bool IsNeedToSpawn(in BulletPattern Pattern, in float CurrentTime)
 	{
-		return (Pattern.TimeWhenReleased < CurrentTime);
+		return !Pattern.IsSpawned && (Pattern.TimeWhenReleased < CurrentTime);
 	}
 }
