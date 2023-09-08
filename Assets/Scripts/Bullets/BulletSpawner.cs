@@ -4,11 +4,18 @@ using static BulletPatterns;
 
 public class BulletSpawner : MonoBehaviour
 {
+	internal static BulletSpawner instance;
+
 	[SerializeField] private GameObject _BulletPrefab;
 	[SerializeField] private BulletPatterns _BulletPatterns;
 	private ObjectPool<GameObject> BulletsPool;
 
-	private void Start()
+    void Awake()
+    {
+		instance = this;
+    }
+
+    void Start()
 	{
 		BulletsPool = new ObjectPool<GameObject>(() => Instantiate(_BulletPrefab));
 	}
