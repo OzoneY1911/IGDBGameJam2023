@@ -6,13 +6,20 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewBulletPatterns", menuName = "BulletPatterns")]
 public class BulletPatterns : ScriptableObject
 {
+	// stores the number of cells a bullet can travel in one second
+	[SerializeField] private float howManyTilesBulletGoInOneSec = 4f;
+
+	// beats per minute
     public float BPM;
-	// coordinates of the upper left border of the playing field
-	public Vector2 UpperBoundOfPlayingField;
-	// coordinates of the down left border of the playing field
-	public Vector2 DownBoundOfPlayingField;
-	// coordinates of the x of right border of the playing field
-	public int RightBoundOfPlayingField;
+	// coordinates of the stand where music spawns in the playing field
+	public Vector2 FirstStand;
+	public Vector2 SecondStand;
+
+	// coordinates of centre of circle player movement from playing field
+	public Vector2 PlayerMovementCentre;
+
+	// coordinates of the x of left border of the playing field
+	public int LeftBoundOfPlayingField;
 
 	// there is usually a constant amount of time between two beats in ms
 	[NonSerialized] public float TimeBetweenEveryBeat;
@@ -42,6 +49,9 @@ public class BulletPatterns : ScriptableObject
 		// how much time must elapse since the beginning of the music to release the bullet on the playing field so that the bullet can reach the player at a certain beat
 		[NonSerialized] public float TimeWhenReleased;
 
+		// if true not will release from the first stand
+		[NonSerialized] public bool isFirstStand;
+
 		// initial position, specified as a vector to be given to the point
 		[NonSerialized] public Vector2 StartTransform;
 
@@ -54,13 +64,16 @@ public class BulletPatterns : ScriptableObject
 	{
 		TimeBetweenEveryBeat = 60000f / BPM;
         TimeBetweenEveryMicroBeat = TimeBetweenEveryBeat / 4f;
+		bool isFirstStandUse = false;
 		foreach (var pattern in bulletPatterns)
 		{
-			pattern.StartTransform = new Vector2(UpperBoundOfPlayingField.x, Mathf.Lerp(UpperBoundOfPlayingField.y, DownBoundOfPlayingField.y, (pattern.CentreSideDeviation + 1f) / 2f));
+			pattern.isFirstStand = isFirstStandUse;
+			isFirstStandUse = !isFirstStandUse;
+			pattern.StartTransform = (pattern.isFirstStand ? FirstStand : SecondStand);
 			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
 
-			float distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, new Vector2(pattern.StartTransform.x + RightBoundOfPlayingField, pattern.StartTransform.y));
-			pattern.TimeWhenReleased = pattern.ReachTime - distantionToPass / pattern.Speed * 1000/*convert to ms*/;
+			float distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, new Vector2(PlayerMovementCentre.x, Mathf.Lerp(FirstStand.y, SecondStand.y, (pattern.CentreSideDeviation + 1f) / 2f)));
+			pattern.TimeWhenReleased = pattern.ReachTime - distantionToPass / howManyTilesBulletGoInOneSec / pattern.Speed * 1000/*convert to ms*/;
 		}
 	}
 
@@ -73,10 +86,10 @@ public class BulletPatterns : ScriptableObject
 
 		if (hit.collider != null) // if collided with something return distance considering this collision
 		{
-			return Mathf.Abs(hit.point.x - firstPoint.x);
+			return Vector2.Distance(hit.point, firstPoint);
 		} else
 		{
-			return Mathf.Abs(secondPoint.x - firstPoint.x);
+			return Vector2.Distance(secondPoint, firstPoint);
 		}
 	}
 }

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     Quaternion originalRotation;
 
     float rotationAngle = 0;
-    float maximalAngle = 90;
+    float maximalAngle = 60;
 
     void Awake()
     {
@@ -25,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Move up if angle is > -90 and move down if angle is < 90
-        if (Input.GetKey(KeyCode.W) && rotationAngle > -maximalAngle)
+        if (Input.GetKey(KeyCode.S) && rotationAngle > -maximalAngle)
         {
             Move(-0.5f);
         }
-        else if (Input.GetKey(KeyCode.S) && rotationAngle < maximalAngle)
+        else if (Input.GetKey(KeyCode.W) && rotationAngle < maximalAngle)
         {
             Move(0.5f);
         }
