@@ -7,7 +7,7 @@ public class menu_audio_manager : MonoBehaviour
 {
    public static menu_audio_manager instance { get; private set; }
 
-   private void awake()
+   private void Awake()
    {
     if(instance != null)
     {
@@ -16,7 +16,7 @@ public class menu_audio_manager : MonoBehaviour
     instance = this;
    }
 
-   public void PlayOneShot(EventReference sound, Vector3 worldPos)
+   public void PlaySound(EventReference sound, Vector3 worldPos)
    {
     RuntimeManager.PlayOneShot(sound, worldPos);
    }
