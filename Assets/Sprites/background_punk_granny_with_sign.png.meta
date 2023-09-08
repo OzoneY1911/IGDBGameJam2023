@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      background_punk_granny_with_sign_0: -5496467086159600383
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

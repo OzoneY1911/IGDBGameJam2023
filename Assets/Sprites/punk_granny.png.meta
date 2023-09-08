@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      punk_granny_0: 1314527540874656007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
