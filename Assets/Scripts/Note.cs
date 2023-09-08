@@ -37,7 +37,7 @@ public class Note : MonoBehaviour
         if (transform.position == new Vector3(endPoint.x, endPoint.y, 0))
         {
             gameObject.SetActive(false);
-            GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletSpawner>().AddBulletToPool(this.gameObject);
+            BulletSpawner.instance.AddBulletToPool(gameObject);
         }
     }
 
