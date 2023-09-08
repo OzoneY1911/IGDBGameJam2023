@@ -6,14 +6,15 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewBulletPatterns", menuName = "BulletPatterns")]
 public class BulletPatterns : ScriptableObject
 {
-	// stores the number of cells a bullet can travel in one second
-	[SerializeField] private float howManyTilesBulletGoInOneSec = 4f;
-
 	// beats per minute
     public float BPM;
 	// coordinates of the stand where music spawns in the playing field
 	public Vector2 FirstStand;
 	public Vector2 SecondStand;
+
+	// coordinates of the max and min bullet height in the playing field
+	public float MaxBulletHeight;
+	public float MinBulletHeight;
 
 	// coordinates of centre of circle player movement from playing field
 	public Vector2 PlayerMovementCentre;
@@ -57,6 +58,12 @@ public class BulletPatterns : ScriptableObject
 
 		// how many ms must elapse from the beginning of the song for the bullet to reach the player
 		[NonSerialized] public float ReachTime;
+
+		// how many distance between startpoint and endpoint
+		[NonSerialized] public float distantionToPass;
+
+		// end position of the bullet
+		[NonSerialized] public Vector2 EndPosition;
 	}
 
 	// calls on start
@@ -70,10 +77,10 @@ public class BulletPatterns : ScriptableObject
 			pattern.isFirstStand = isFirstStandUse;
 			isFirstStandUse = !isFirstStandUse;
 			pattern.StartTransform = (pattern.isFirstStand ? FirstStand : SecondStand);
+			pattern.EndPosition = new Vector2(LeftBoundOfPlayingField - 1, Mathf.Lerp(MinBulletHeight, MaxBulletHeight, (pattern.CentreSideDeviation + 1f) / 2f)); //
 			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
-
-			float distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, new Vector2(PlayerMovementCentre.x, Mathf.Lerp(FirstStand.y, SecondStand.y, (pattern.CentreSideDeviation + 1f) / 2f)));
-			pattern.TimeWhenReleased = pattern.ReachTime - distantionToPass / howManyTilesBulletGoInOneSec / pattern.Speed * 1000/*convert to ms*/;
+			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
+			pattern.TimeWhenReleased = pattern.ReachTime - pattern.distantionToPass / pattern.Speed * 1000/*convert to ms*/;
 		}
 	}
 

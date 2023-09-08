@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea38ee38e494fc459b8589ddb47102f, type: 3}
   m_Name: BulletPattern
   m_EditorClassIdentifier: 
-  howManyTilesBulletGoInOneSec: 4
   BPM: 175
   FirstStand: {x: 5, y: 1.5}
   SecondStand: {x: 5.1, y: -3.26}
+  MaxBulletHeight: 3.8
+  MinBulletHeight: -3.8
   PlayerMovementCentre: {x: -5.81, y: -1.16}
   LeftBoundOfPlayingField: -8
   bulletPatterns:
-  - BeatWhenReachPlayer: 14
+  - BeatWhenReachPlayer: 1
     MicroBeatWhenReachPlayer: 0
     Speed: 1
     Size: 1
