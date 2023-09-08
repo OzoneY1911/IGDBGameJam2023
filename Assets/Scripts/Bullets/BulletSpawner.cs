@@ -34,7 +34,7 @@ public class BulletSpawner : MonoBehaviour
 
 	private float CalculateDeviationFromStart(in BulletPattern Pattern, in float CurrentTime)
 	{
-		return (CurrentTime - Pattern.TimeWhenReleased) / Pattern.Speed;
+		return (Pattern.TimeWhenReleased - CurrentTime) / Pattern.Speed;
 	}
 
 	private bool IsNeedToSpawn(in BulletPattern Pattern, in float CurrentTime)
