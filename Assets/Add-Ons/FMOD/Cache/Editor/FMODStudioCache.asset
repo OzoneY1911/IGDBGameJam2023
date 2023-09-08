@@ -54,26 +54,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
---- !u!114 &-6891921022699471302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/fmod_banks/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638297841203822381
-  FileSizes:
-  - Name: 
-    Value: 964
-  Exists: 1
 --- !u!114 &-6627948955541182735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,10 +157,10 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6891921022699471302}
   - {fileID: 1143411681569652984}
   - {fileID: 4589982444712560419}
   - {fileID: 567943959013727739}
+  - {fileID: 6110491174365850515}
   EditorEvents:
   - {fileID: -4089434599186455215}
   - {fileID: -6627948955541182735}
@@ -189,6 +169,8 @@ MonoBehaviour:
   MasterBanks:
   - {fileID: 1143411681569652984}
   StringsBanks:
+  - {fileID: 6110491174365850515}
+  cacheTime: 638297841203937933
   cacheVersion: 131605
 --- !u!114 &110989997333758891
 MonoBehaviour:
@@ -336,3 +318,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &6110491174365850515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/fmod_banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638297841203822381
+  FileSizes:
+  - Name: 
+    Value: 964
+  Exists: 1
