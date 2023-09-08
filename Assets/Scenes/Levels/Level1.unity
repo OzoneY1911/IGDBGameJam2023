@@ -182,12 +182,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.5
+  m_Radius: 0.5
 --- !u!1 &210209524
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 401770222}
   - component: {fileID: 401770221}
-  - component: {fileID: 401770220}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -308,14 +307,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!81 &401770220
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 401770219}
-  m_Enabled: 1
 --- !u!20 &401770221
 Camera:
   m_ObjectHideFlags: 0
@@ -620,6 +611,7 @@ GameObject:
   - component: {fileID: 1081047642}
   - component: {fileID: 1081047641}
   - component: {fileID: 1081047644}
+  - component: {fileID: 1081047645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -641,6 +633,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arcCenter: {fileID: 10473409}
   rotationSpeed: 0.25
+  maximalAngle: 60
+  movementSpeed: 5
+  freeMovement: 0
 --- !u!212 &1081047642
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -754,6 +749,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.32, y: 0.66}
   m_EdgeRadius: 0
+--- !u!50 &1081047645
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081047640}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1605196617
 GameObject:
   m_ObjectHideFlags: 0
