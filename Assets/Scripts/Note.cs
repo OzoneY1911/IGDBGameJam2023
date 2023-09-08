@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-
     [Header("Position")]
     [SerializeField] Vector2 startPoint;
     [SerializeField] Vector2 endPoint;
