@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.SceneManagement;
 using static BulletPatterns;
 
 public class BulletSpawner : MonoBehaviour

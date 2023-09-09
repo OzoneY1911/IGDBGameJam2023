@@ -3,6 +3,17 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
 	[SerializeField] private GameObject DeathCanvas;
+	[SerializeField] private int HealthPoints = 100;
+
+	public int Health
+	{
+		get { return HealthPoints; }
+		set {
+			HealthPoints = value;
+			if (HealthPoints <= 0)
+				Death();
+		}
+	}
 
     void Death()
     {
@@ -15,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Note"))
 		{
-			Death();
+			Health -= 50;
 		}
 	}
 }

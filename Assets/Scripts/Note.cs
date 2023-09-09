@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Note : MonoBehaviour
 {
@@ -19,10 +15,11 @@ public class Note : MonoBehaviour
 
     void OnEnable()
     {
-        transform.localScale = new Vector3(noteSize, noteSize, noteSize);
+        transform.localScale = new Vector2(noteSize, noteSize);
 
         startPoint.x -= shiftStartPointX;
         transform.position = startPoint;
+        gameObject.SetActive(true);
 	}
 
 	void Update()
@@ -30,11 +27,11 @@ public class Note : MonoBehaviour
         // Move between two points
         if (gameObject.activeSelf)
         {
-            transform.position = Vector3.MoveTowards(transform.position, endPoint, noteSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, endPoint, noteSpeed * Time.deltaTime);
         }
 
         // If Note reaches endPoint
-        if (transform.position == new Vector3(endPoint.x, endPoint.y, 0))
+        if (transform.position.x == endPoint.x && transform.position.y == endPoint.y)
         {
             gameObject.SetActive(false);
             BulletSpawner.instance.AddBulletToPool(gameObject);
