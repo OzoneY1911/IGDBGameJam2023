@@ -43,7 +43,10 @@ public class BulletSpawner : MonoBehaviour
 			{
 				bulletPattern.IsSpawned = true;
 				GameObject NewBullet = BulletsPool.Get();
-				NewBullet.GetComponent<Note>().Init(bulletPattern.StartTransform, bulletPattern.EndPosition, CalculateDeviationFromStart(bulletPattern, CurrentTime), bulletPattern.Speed, bulletPattern.Size, bulletPattern.Type);
+				NewBullet.GetComponent<Note>().Init(bulletPattern.StartTransform, bulletPattern.EndPosition, 
+					CalculateDeviationFromStart(bulletPattern, CurrentTime), bulletPattern.Speed, 
+					bulletPattern.Size, bulletPattern.Type, bulletPattern.Sprite
+					);
 			}
 		}
     }

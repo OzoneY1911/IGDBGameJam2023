@@ -16,14 +16,16 @@ public class Note : MonoBehaviour
     [SerializeField] float Size = 1f;
 
 	[NonSerialized] public BulletType Type;
+	private Sprite sprite;
 
-    void OnEnable()
+	void OnEnable()
     {
         transform.localScale = new Vector2(Size, Size);
 
         startPoint += (shiftStartPoint * (endPoint - startPoint).normalized);
         transform.position = startPoint;
-        gameObject.SetActive(true);
+        GetComponent<SpriteRenderer>().sprite = sprite;
+		gameObject.SetActive(true);
 	}
 
 	void Update()
@@ -42,11 +44,12 @@ public class Note : MonoBehaviour
         }
     }
 
-    public void Init(in Vector2 startPoint, in Vector2 endPoint, in float shiftStartPoint, in float noteSpeed, in float noteSize, in BulletType noteType)
+    public void Init(in Vector2 startPoint, in Vector2 endPoint, in float shiftStartPoint, in float noteSpeed, in float noteSize, in BulletType noteType, in Sprite noteSprite)
     {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.shiftStartPoint = shiftStartPoint;
+        this.sprite = noteSprite;
         Speed = noteSpeed;
         Size = noteSize;
         Type = noteType;

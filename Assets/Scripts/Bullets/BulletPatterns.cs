@@ -6,8 +6,11 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewBulletPatterns", menuName = "BulletPatterns")]
 public class BulletPatterns : ScriptableObject
 {
+	[SerializeField] private Sprite[] NotColoredNotes;
+	[SerializeField] private Sprite[] ColoredNotes;
+
 	// beats per minute
-    public float BPM;
+	public float BPM;
 	// coordinates of the stand where music spawns in the playing field
 	public Vector2 FirstStand;
 	public Vector2 SecondStand;
@@ -77,6 +80,8 @@ public class BulletPatterns : ScriptableObject
 		[NonSerialized] public Vector2 EndPosition;
 
 		[NonSerialized] public bool IsSpawned = false;
+
+		[NonSerialized] public Sprite Sprite;
 	}
 
 	// calls on start
@@ -94,6 +99,7 @@ public class BulletPatterns : ScriptableObject
 			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
 			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
 			pattern.TimeWhenReleased = pattern.ReachTime - pattern.distantionToPass / pattern.Speed * 1000/*convert to ms*/;
+			pattern.Sprite = (pattern.Type == BulletType.Standart ? NotColoredNotes[UnityEngine.Random.Range(0, NotColoredNotes.Length)] : ColoredNotes[UnityEngine.Random.Range(0, ColoredNotes.Length)]);
 		}
 	}
 
