@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arcCenter: {fileID: 10473409}
-  rotationSpeed: 0.25
+  rotationSpeed: 1.5
   maximalAngle: 60
   movementSpeed: 5
   freeMovement: 0

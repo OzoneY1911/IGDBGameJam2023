@@ -7,7 +7,7 @@ public class Note : MonoBehaviour
     [Header("Position")]
     [SerializeField] Vector2 startPoint;
     [SerializeField] Vector2 endPoint;
-    [SerializeField] float shiftStartPointX;
+    [SerializeField] float shiftStartPoint;
 
     [Header("Speed")]
     [SerializeField] float Speed = 5f;
@@ -21,7 +21,7 @@ public class Note : MonoBehaviour
     {
         transform.localScale = new Vector2(Size, Size);
 
-        startPoint.x -= shiftStartPointX;
+        startPoint += (shiftStartPoint * (endPoint - startPoint).normalized);
         transform.position = startPoint;
         gameObject.SetActive(true);
 	}
@@ -42,14 +42,14 @@ public class Note : MonoBehaviour
         }
     }
 
-    public void Init(in Vector2 startPoint, in Vector2 endPoint, in float shiftStartPointX, in float noteSpeed, in float noteSize, in BulletType noteType)
+    public void Init(in Vector2 startPoint, in Vector2 endPoint, in float shiftStartPoint, in float noteSpeed, in float noteSize, in BulletType noteType)
     {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
-        this.shiftStartPointX = shiftStartPointX;
-        this.Speed = noteSpeed;
-        this.Size = noteSize;
-        this.Type = noteType;
+        this.shiftStartPoint = shiftStartPoint;
+        Speed = noteSpeed;
+        Size = noteSize;
+        Type = noteType;
 
         OnEnable();
     }
