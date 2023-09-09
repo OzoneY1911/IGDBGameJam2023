@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void MoveArc(float degree)
+    void MoveArc(in float degree)
     {
         rotationAngle += degree;
 

@@ -22,11 +22,4 @@ public class PlayerHealth : MonoBehaviour
 		DeathCanvas.SetActive(true);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.CompareTag("Note"))
-		{
-			Health -= 50;
-		}
-	}
 }
