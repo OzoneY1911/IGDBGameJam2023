@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
 using static BulletPatterns;
@@ -30,6 +31,11 @@ public class BulletSpawner : MonoBehaviour
 
 	void Update()
     {
+		if (Time.timeScale != 1)
+		{
+			StartTime += Time.deltaTime * Time.timeScale;
+		}
+
 		float CurrentTime = Time.time * 1000 - StartTime * 1000; // calculates current time in ms
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
 		{
