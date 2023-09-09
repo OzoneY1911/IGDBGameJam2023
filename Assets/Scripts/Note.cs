@@ -15,7 +15,7 @@ public class Note : MonoBehaviour
     [Header("Note Size")]
     [SerializeField] float Size = 1f;
 
-    [NonSerialized] public BulletType Type;
+	[NonSerialized] public BulletType Type;
 
     void OnEnable()
     {
@@ -31,7 +31,7 @@ public class Note : MonoBehaviour
         // Move between two points
         if (gameObject.activeSelf)
         {
-            transform.position = Vector2.MoveTowards(transform.position, endPoint, Speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, endPoint, Speed * Time.deltaTime * Time.timeScale);
         }
 
         // If Note reaches endPoint

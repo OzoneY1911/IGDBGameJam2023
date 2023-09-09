@@ -21,13 +21,13 @@ MonoBehaviour:
   LeftBoundOfPlayingField: -8
   bulletPatterns:
   - Type: 0
-    BeatWhenReachPlayer: 10
+    BeatWhenReachPlayer: 15
     MicroBeatWhenReachPlayer: 0
-    Speed: 10
+    Speed: 2
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
-    BeatWhenReachPlayer: 20
+    BeatWhenReachPlayer: 35
     MicroBeatWhenReachPlayer: 0
     Speed: 10
     Size: 1
