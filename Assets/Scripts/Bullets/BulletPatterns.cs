@@ -30,10 +30,21 @@ public class BulletPatterns : ScriptableObject
 
 	// an array that stores all the data about different bullets
 	public List<BulletPattern> bulletPatterns = new List<BulletPattern>();
+	
+	public enum BulletType : byte
+	{
+		Standart,
+		HpIncrease,
+		SlowTime,
+		BiggerInvisiblePlayer
+	}
 
 	// every bullet can be described in this class
 	[Serializable] public class BulletPattern
 	{
+		// type of the bullet
+		public BulletType Type = BulletType.Standart;
+
 		// bullet beat on which the bullet must reach the player
 		public int BeatWhenReachPlayer;
 
@@ -79,7 +90,7 @@ public class BulletPatterns : ScriptableObject
 			pattern.isFirstStand = isFirstStandUse;
 			isFirstStandUse = !isFirstStandUse;
 			pattern.StartTransform = (pattern.isFirstStand ? FirstStand : SecondStand);
-			pattern.EndPosition = new Vector2(LeftBoundOfPlayingField - 1, Mathf.Lerp(MinBulletHeight, MaxBulletHeight, (pattern.CentreSideDeviation + 1f) / 2f)); //
+			pattern.EndPosition = new Vector2(LeftBoundOfPlayingField - 1, Mathf.Lerp(MinBulletHeight, MaxBulletHeight, (pattern.CentreSideDeviation + 1f) / 2f));
 			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
 			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
 			pattern.TimeWhenReleased = pattern.ReachTime - pattern.distantionToPass / pattern.Speed * 1000/*convert to ms*/;

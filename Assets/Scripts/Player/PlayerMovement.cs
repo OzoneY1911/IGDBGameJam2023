@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -60,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void MoveArc(float degree)
+    void MoveArc(in float degree)
     {
         rotationAngle += degree;
 

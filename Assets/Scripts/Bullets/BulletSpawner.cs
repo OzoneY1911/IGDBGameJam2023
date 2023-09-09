@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.SceneManagement;
 using static BulletPatterns;
 
+// singletone class that spawns bullet in the playing field
 public class BulletSpawner : MonoBehaviour
 {
 	internal static BulletSpawner instance;
@@ -11,7 +10,7 @@ public class BulletSpawner : MonoBehaviour
 	[SerializeField] private GameObject _BulletPrefab;
 	[SerializeField] private BulletPatterns _BulletPatterns;
 	private ObjectPool<GameObject> BulletsPool;
-	private float StartTime;
+	private float StartTime; // time when songs starts
 
 	void Awake()
     {
@@ -20,6 +19,7 @@ public class BulletSpawner : MonoBehaviour
 
     void Start()
 	{
+		// inits
 		BulletsPool = new ObjectPool<GameObject>(() => Instantiate(_BulletPrefab));
 		StartTime = Time.time;
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
@@ -30,28 +30,31 @@ public class BulletSpawner : MonoBehaviour
 
 	void Update()
     {
-		float CurrentTime = Time.time * 1000 - StartTime * 1000;
+		float CurrentTime = Time.time * 1000 - StartTime * 1000; // calculates current time in ms
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
 		{
-			if (IsNeedToSpawn(bulletPattern, CurrentTime))
+			if (IsNeedToSpawn(bulletPattern, CurrentTime)) // check if need to spawn then get bullet from pool and init
 			{
 				bulletPattern.IsSpawned = true;
 				GameObject NewBullet = BulletsPool.Get();
-				NewBullet.GetComponent<Note>().Init(bulletPattern.StartTransform, bulletPattern.EndPosition, CalculateDeviationFromStart(bulletPattern, CurrentTime), bulletPattern.Speed, bulletPattern.Size);
+				NewBullet.GetComponent<Note>().Init(bulletPattern.StartTransform, bulletPattern.EndPosition, CalculateDeviationFromStart(bulletPattern, CurrentTime), bulletPattern.Speed, bulletPattern.Size, bulletPattern.Type);
 			}
 		}
     }
 
+	// add used bullet back to pool
 	public void AddBulletToPool(GameObject Bullet)
 	{
 		BulletsPool.Release(Bullet);
 	}
 
+	// finds out at what starting position the bullet needs to be spawned, taking into account the delay between frames
 	private float CalculateDeviationFromStart(in BulletPattern Pattern, in float CurrentTime)
 	{
 		return (Pattern.TimeWhenReleased - CurrentTime) / Pattern.Speed;
 	}
 
+	// check if bullet need to spawn now
 	private bool IsNeedToSpawn(in BulletPattern Pattern, in float CurrentTime)
 	{
 		return !Pattern.IsSpawned && (Pattern.TimeWhenReleased < CurrentTime);
