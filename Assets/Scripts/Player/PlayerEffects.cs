@@ -8,6 +8,8 @@ public class PlayerEffects : MonoBehaviour
 	[SerializeField] private float TimeForSlow = 4f;
 	[SerializeField] private float TimeBigAndInvisible = 4f;
 	[SerializeField] private Color InvisibleColor;
+	[SerializeField] private Color DamagedColor;
+	[SerializeField] private Color HealthColor;
 	private bool IsImmortal = false;
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -26,9 +28,11 @@ public class PlayerEffects : MonoBehaviour
 		{
 			case BulletType.Standart:
 				GetComponent<PlayerHealth>().Health -= 50;
+				StartCoroutine(ChangePlayerColor(0.2f, DamagedColor));
 				break;
 			case BulletType.HpIncrease:
 				GetComponent<PlayerHealth>().Health += 50;
+				StartCoroutine(ChangePlayerColor(0.2f, HealthColor));
 				break;
 			case BulletType.SlowTime:
 				StartCoroutine(SlowTime(TimeForSlow, SlowMultiplier));
@@ -40,6 +44,13 @@ public class PlayerEffects : MonoBehaviour
 
 		collision.gameObject.SetActive(false);
 		BulletSpawner.instance.AddBulletToPool(collision.gameObject);
+	}
+
+	private IEnumerator ChangePlayerColor(float time, Color color)
+	{
+		gameObject.GetComponent<SpriteRenderer>().color = color;
+		yield return new WaitForSeconds(time);
+		gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
 	}
 
 	// slow time for a certain period of time

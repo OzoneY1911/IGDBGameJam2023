@@ -31,6 +31,8 @@ public class BulletPatterns : ScriptableObject
 	// every beat usually has 4 micro beats
 	[NonSerialized] public float TimeBetweenEveryMicroBeat;
 
+	[SerializeField] public float SongLength;
+
 	// an array that stores all the data about different bullets
 	public List<BulletPattern> bulletPatterns = new List<BulletPattern>();
 	
@@ -82,6 +84,8 @@ public class BulletPatterns : ScriptableObject
 		[NonSerialized] public bool IsSpawned = false;
 
 		[NonSerialized] public Sprite Sprite;
+
+		[NonSerialized] public uint Number;
 	}
 
 	// calls on start
@@ -90,6 +94,7 @@ public class BulletPatterns : ScriptableObject
 		TimeBetweenEveryBeat = 60000f / BPM;
         TimeBetweenEveryMicroBeat = TimeBetweenEveryBeat / 4f;
 		bool isFirstStandUse = false;
+		uint currNumber = 0;
 		foreach (var pattern in bulletPatterns)
 		{
 			pattern.isFirstStand = isFirstStandUse;
@@ -98,8 +103,10 @@ public class BulletPatterns : ScriptableObject
 			pattern.EndPosition = new Vector2(LeftBoundOfPlayingField - 1, Mathf.Lerp(MinBulletHeight, MaxBulletHeight, (pattern.CentreSideDeviation + 1f) / 2f));
 			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
 			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
-			pattern.TimeWhenReleased = pattern.ReachTime - pattern.distantionToPass / pattern.Speed * 1000/*convert to ms*/;
+			pattern.TimeWhenReleased = pattern.ReachTime;
 			pattern.Sprite = (pattern.Type == BulletType.Standart ? NotColoredNotes[UnityEngine.Random.Range(0, NotColoredNotes.Length)] : ColoredNotes[UnityEngine.Random.Range(0, ColoredNotes.Length)]);
+			pattern.Number = currNumber;
+			currNumber++;
 		}
 	}
 

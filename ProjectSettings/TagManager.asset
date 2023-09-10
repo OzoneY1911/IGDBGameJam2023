@@ -57,3 +57,6 @@ TagManager:
   - name: Death
     uniqueID: 803693223
     locked: 0
+  - name: Win
+    uniqueID: 3786741105
+    locked: 0

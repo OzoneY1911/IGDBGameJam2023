@@ -10,6 +10,8 @@ public class BulletSpawner : MonoBehaviour
 
 	[SerializeField] private GameObject _BulletPrefab;
 	[SerializeField] private BulletPatterns _BulletPatterns;
+	[SerializeField] private GameObject WinCanvas;
+	[SerializeField] private GameObject Player;
 	private ObjectPool<GameObject> BulletsPool;
 	private float StartTime; // time when songs starts
 
@@ -37,6 +39,15 @@ public class BulletSpawner : MonoBehaviour
 		}
 
 		float CurrentTime = Time.time * 1000 - StartTime * 1000; // calculates current time in ms
+
+		if (_BulletPatterns.SongLength * 1000 < CurrentTime)
+		{
+			Player.GetComponent<PlayerMovement>().enabled = false;
+			this.enabled = false;
+			GameController.instance.enabled = false;
+			WinCanvas.SetActive(true);
+		}
+
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
 		{
 			if (IsNeedToSpawn(bulletPattern, CurrentTime)) // check if need to spawn then get bullet from pool and init
@@ -45,7 +56,7 @@ public class BulletSpawner : MonoBehaviour
 				GameObject NewBullet = BulletsPool.Get();
 				NewBullet.GetComponent<Note>().Init(bulletPattern.StartTransform, bulletPattern.EndPosition, 
 					CalculateDeviationFromStart(bulletPattern, CurrentTime), bulletPattern.Speed, 
-					bulletPattern.Size, bulletPattern.Type, bulletPattern.Sprite
+					bulletPattern.Size, bulletPattern.Type, bulletPattern.Sprite, bulletPattern.Number
 					);
 			}
 		}

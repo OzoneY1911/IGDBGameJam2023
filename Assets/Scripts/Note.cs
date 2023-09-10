@@ -17,6 +17,7 @@ public class Note : MonoBehaviour
 
 	[NonSerialized] public BulletType Type;
 	private Sprite sprite;
+	private uint number;
 
 	void OnEnable()
     {
@@ -25,6 +26,8 @@ public class Note : MonoBehaviour
         startPoint += (shiftStartPoint * (endPoint - startPoint).normalized);
         transform.position = startPoint;
         GetComponent<SpriteRenderer>().sprite = sprite;
+		gameObject.name = number.ToString();
+		gameObject.GetComponent<BoxCollider2D>().size = gameObject.GetComponent<SpriteRenderer>().bounds.size / 2;
 		gameObject.SetActive(true);
 	}
 
@@ -44,12 +47,13 @@ public class Note : MonoBehaviour
         }
     }
 
-    public void Init(in Vector2 startPoint, in Vector2 endPoint, in float shiftStartPoint, in float noteSpeed, in float noteSize, in BulletType noteType, in Sprite noteSprite)
+    public void Init(in Vector2 startPoint, in Vector2 endPoint, in float shiftStartPoint, in float noteSpeed, in float noteSize, in BulletType noteType, in Sprite noteSprite, in uint number)
     {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.shiftStartPoint = shiftStartPoint;
         this.sprite = noteSprite;
+        this.number = number;
         Speed = noteSpeed;
         Size = noteSize;
         Type = noteType;

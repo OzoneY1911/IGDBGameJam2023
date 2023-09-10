@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     {
         GetComponent<PlayerMovement>().enabled = false;
 		BulletSpawner.instance.enabled = false;
+		GameController.instance.enabled = false;
 		DeathCanvas.SetActive(true);
 	}
 
