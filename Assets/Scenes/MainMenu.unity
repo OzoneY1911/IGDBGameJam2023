@@ -1516,7 +1516,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
+  m_fontSize: 31.6
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2029,8 +2029,8 @@ MonoBehaviour:
   UnloadEvent: 2
   Banks:
   - Master
-  - music_bank
-  - sfx_bank
+  - musicBank
+  - sfxBank
   CollisionTag: 
   PreloadSamples: 0
 --- !u!1 &1349994983
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
+  m_fontSize: 31.8
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2758,18 +2758,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hover_button:
     Guid:
-      Data1: -1450421924
-      Data2: 1134449941
-      Data3: -1753861750
-      Data4: -1371935716
-    Path: event:/button_hover
+      Data1: 1271961235
+      Data2: 1327288530
+      Data3: -780444496
+      Data4: -851084281
+    Path: event:/menu_select
   click_button:
     Guid:
-      Data1: 1481676595
-      Data2: 1295580224
-      Data3: -123571527
-      Data4: -254277756
-    Path: event:/button_click
+      Data1: 408393352
+      Data2: 1305317314
+      Data3: -873629026
+      Data4: -1979127778
+    Path: event:/menu_click
 --- !u!1 &1752924272
 GameObject:
   m_ObjectHideFlags: 0
