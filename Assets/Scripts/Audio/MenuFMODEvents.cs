@@ -9,6 +9,9 @@ public class MenuFMODEvents : MonoBehaviour
     public EventReference hover_button;
     public EventReference click_button;
 
+    [Header("menu_music")]
+    public EventReference menu_chords;
+
     void Awake()
     {
         instance = this;

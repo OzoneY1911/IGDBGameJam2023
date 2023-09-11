@@ -1516,7 +1516,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
+  m_fontSize: 31.6
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1978,6 +1978,7 @@ GameObject:
   - component: {fileID: 1338200124}
   - component: {fileID: 1338200126}
   - component: {fileID: 1338200125}
+  - component: {fileID: 1338200127}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2029,10 +2030,41 @@ MonoBehaviour:
   UnloadEvent: 2
   Banks:
   - Master
-  - music_bank
-  - sfx_bank
+  - musicBank
+  - sfxBank
   CollisionTag: 
   PreloadSamples: 0
+--- !u!114 &1338200127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338200123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1126981572
+      Data2: 1132268515
+      Data3: -1748054878
+      Data4: 47623707
+    Path: event:/menuChords
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1349994983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,7 +2255,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33
+  m_fontSize: 31.8
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2758,18 +2790,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hover_button:
     Guid:
-      Data1: -1450421924
-      Data2: 1134449941
-      Data3: -1753861750
-      Data4: -1371935716
-    Path: event:/button_hover
+      Data1: 1271961235
+      Data2: 1327288530
+      Data3: -780444496
+      Data4: -851084281
+    Path: event:/menuSelect
   click_button:
     Guid:
-      Data1: 1481676595
-      Data2: 1295580224
-      Data3: -123571527
-      Data4: -254277756
-    Path: event:/button_click
+      Data1: 408393352
+      Data2: 1305317314
+      Data3: -873629026
+      Data4: -1979127778
+    Path: event:/menuClick
+  menu_chords:
+    Guid:
+      Data1: -1126981572
+      Data2: 1132268515
+      Data3: -1748054878
+      Data4: 47623707
+    Path: event:/menuChords
 --- !u!1 &1752924272
 GameObject:
   m_ObjectHideFlags: 0
