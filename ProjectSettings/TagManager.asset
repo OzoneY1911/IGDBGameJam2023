@@ -51,6 +51,12 @@ TagManager:
   - name: Player
     uniqueID: 3280529529
     locked: 0
+  - name: UI
+    uniqueID: 1984060725
+    locked: 0
   - name: Death
     uniqueID: 803693223
+    locked: 0
+  - name: Win
+    uniqueID: 3786741105
     locked: 0

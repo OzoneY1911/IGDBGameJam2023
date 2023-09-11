@@ -6,8 +6,11 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewBulletPatterns", menuName = "BulletPatterns")]
 public class BulletPatterns : ScriptableObject
 {
+	[SerializeField] private Sprite[] ColoredNotes;
+
 	// beats per minute
-    public float BPM;
+	public float BPM;
+	public float offset = 0f;
 	// coordinates of the stand where music spawns in the playing field
 	public Vector2 FirstStand;
 	public Vector2 SecondStand;
@@ -28,6 +31,8 @@ public class BulletPatterns : ScriptableObject
 	// every beat usually has 4 micro beats
 	[NonSerialized] public float TimeBetweenEveryMicroBeat;
 
+	[SerializeField] public float SongLength;
+
 	// an array that stores all the data about different bullets
 	public List<BulletPattern> bulletPatterns = new List<BulletPattern>();
 	
@@ -36,7 +41,8 @@ public class BulletPatterns : ScriptableObject
 		Standart,
 		HpIncrease,
 		SlowTime,
-		BiggerInvisiblePlayer
+		BiggerInvisiblePlayer,
+		FreeMovement
 	}
 
 	// every bullet can be described in this class
@@ -77,6 +83,10 @@ public class BulletPatterns : ScriptableObject
 		[NonSerialized] public Vector2 EndPosition;
 
 		[NonSerialized] public bool IsSpawned = false;
+
+		[NonSerialized] public Sprite Sprite;
+
+		[NonSerialized] public uint Number;
 	}
 
 	// calls on start
@@ -85,15 +95,19 @@ public class BulletPatterns : ScriptableObject
 		TimeBetweenEveryBeat = 60000f / BPM;
         TimeBetweenEveryMicroBeat = TimeBetweenEveryBeat / 4f;
 		bool isFirstStandUse = false;
+		uint currNumber = 0;
 		foreach (var pattern in bulletPatterns)
 		{
 			pattern.isFirstStand = isFirstStandUse;
 			isFirstStandUse = !isFirstStandUse;
 			pattern.StartTransform = (pattern.isFirstStand ? FirstStand : SecondStand);
 			pattern.EndPosition = new Vector2(LeftBoundOfPlayingField - 1, Mathf.Lerp(MinBulletHeight, MaxBulletHeight, (pattern.CentreSideDeviation + 1f) / 2f));
-			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
+			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat + offset;
 			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
-			pattern.TimeWhenReleased = pattern.ReachTime - pattern.distantionToPass / pattern.Speed * 1000/*convert to ms*/;
+			pattern.TimeWhenReleased = pattern.ReachTime;
+			pattern.Sprite = (pattern.Type == BulletType.Standart ? null : ColoredNotes[UnityEngine.Random.Range(0, ColoredNotes.Length)]);
+			pattern.Number = currNumber;
+			currNumber++;
 		}
 	}
 
