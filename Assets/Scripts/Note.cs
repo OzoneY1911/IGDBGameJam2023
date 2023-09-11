@@ -8,6 +8,7 @@ public class Note : MonoBehaviour
     [SerializeField] Vector2 startPoint;
     [SerializeField] Vector2 endPoint;
     [SerializeField] float shiftStartPoint;
+    [SerializeField] Sprite defaultSprite;
 
     [Header("Speed")]
     [SerializeField] float Speed = 5f;
@@ -25,10 +26,18 @@ public class Note : MonoBehaviour
 
         startPoint += (shiftStartPoint * (endPoint - startPoint).normalized);
         transform.position = startPoint;
-        GetComponent<SpriteRenderer>().sprite = sprite;
+        if (sprite == null)
+        {
+			GetComponent<SpriteRenderer>().sprite = defaultSprite;
+			gameObject.GetComponent<BoxCollider2D>().size = defaultSprite.bounds.size / 1.5f;
+		}
+		else
+		{
+			GetComponent<SpriteRenderer>().sprite = sprite;
+			gameObject.GetComponent<BoxCollider2D>().size = gameObject.GetComponent<SpriteRenderer>().bounds.size / 1.5f;
+		}
 		gameObject.name = number.ToString();
-		gameObject.GetComponent<BoxCollider2D>().size = gameObject.GetComponent<SpriteRenderer>().bounds.size / 2;
-		gameObject.SetActive(true);
+			gameObject.SetActive(true);
 	}
 
 	void Update()

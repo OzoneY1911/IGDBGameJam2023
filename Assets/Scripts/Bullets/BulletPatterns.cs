@@ -6,7 +6,6 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "NewBulletPatterns", menuName = "BulletPatterns")]
 public class BulletPatterns : ScriptableObject
 {
-	[SerializeField] private Sprite[] NotColoredNotes;
 	[SerializeField] private Sprite[] ColoredNotes;
 
 	// beats per minute
@@ -106,7 +105,7 @@ public class BulletPatterns : ScriptableObject
 			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat + offset;
 			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
 			pattern.TimeWhenReleased = pattern.ReachTime;
-			pattern.Sprite = (pattern.Type == BulletType.Standart ? NotColoredNotes[UnityEngine.Random.Range(0, NotColoredNotes.Length)] : ColoredNotes[UnityEngine.Random.Range(0, ColoredNotes.Length)]);
+			pattern.Sprite = (pattern.Type == BulletType.Standart ? null : ColoredNotes[UnityEngine.Random.Range(0, ColoredNotes.Length)]);
 			pattern.Number = currNumber;
 			currNumber++;
 		}

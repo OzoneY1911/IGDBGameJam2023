@@ -30,11 +30,11 @@ public class PlayerEffects : MonoBehaviour
 		switch (collision.gameObject.GetComponent<Note>().Type)
 		{
 			case BulletType.Standart:
-				GetComponent<PlayerHealth>().Health -= 50;
+				GetComponent<PlayerHealth>().Health -= 1;
 				StartCoroutine(ChangePlayerColor(0.2f, DamagedColor));
 				break;
 			case BulletType.HpIncrease:
-				GetComponent<PlayerHealth>().Health += 50;
+				GetComponent<PlayerHealth>().Health += 1;
 				StartCoroutine(ChangePlayerColor(0.2f, HealthColor));
 				break;
 			case BulletType.SlowTime:
