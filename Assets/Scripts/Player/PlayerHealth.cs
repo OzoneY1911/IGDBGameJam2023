@@ -9,8 +9,10 @@ public class PlayerHealth : MonoBehaviour
 	{
 		get { return HealthPoints; }
 		set {
-            if ( value < 3)
-				HealthPoints = value;
+      if ( value < 3) {
+          HealthPoints = value;
+          levelOneAudioManager.instance.playOneShot(levelOneFmodEvents.instance.grannyHit, this.transform.position);
+      }
 			else
 				HealthPoints = 3;
 			if (HealthPoints <= 0)
