@@ -2308,6 +2308,7 @@ MonoBehaviour:
   SlowMultiplier: 0.5
   TimeForSlow: 4
   TimeBigAndInvisible: 4
+  TimeFreeMove: 4
   InvisibleColor: {r: 0, g: 0.88235295, b: 1, a: 0.7176471}
   DamagedColor: {r: 1, g: 0, b: 0, a: 1}
   HealthColor: {r: 0.07058824, g: 1, b: 0, a: 1}
@@ -2324,7 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathCanvas: {fileID: 1092970339}
-  HealthPoints: 100
+  HealthPoints: 3
 --- !u!114 &1507004039
 MonoBehaviour:
   m_ObjectHideFlags: 0
