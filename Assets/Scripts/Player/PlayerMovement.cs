@@ -44,11 +44,11 @@ public class PlayerMovement : MonoBehaviour
             if (!freeMovement)
             {
                 // Move up if angle is > -90 and move down if angle is < 90
-                if (Input.GetKey(KeyCode.S) && rotationAngle > -maximalAngle)
+                if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && rotationAngle > -maximalAngle)
                 {
                     MoveArc(-rotationSpeed * Time.timeScale);
                 }
-                else if (Input.GetKey(KeyCode.W) && rotationAngle < maximalAngle)
+                else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && rotationAngle < maximalAngle)
                 {
                     MoveArc(rotationSpeed * Time.timeScale);
                 }
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontalInput, verticalInput);
 
-        transform.Translate(movementSpeed * Time.deltaTime * movement.normalized * Time.timeScale, Space.World);
+        transform.Translate(movementSpeed * movement.normalized * Time.deltaTime * Time.timeScale, Space.World);
     }
 
     void ToggleFreeMovement()
