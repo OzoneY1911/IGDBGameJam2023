@@ -60,7 +60,7 @@ MonoBehaviour:
   MinBulletHeight: -4
   PlayerMovementCentre: {x: -5.81, y: -1.16}
   LeftBoundOfPlayingField: -8
-  SongLength: 31
+  SongLength: 200
   bulletPatterns:
   - Type: 0
     BeatWhenReachPlayer: 1
