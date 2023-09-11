@@ -54,6 +54,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7673059333017943249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/sfxBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/fmod_banks/Desktop/sfxBank.bank
+  Name: sfxBank
+  StudioPath: bank:/sfxBank
+  lastModified: 638300450493677726
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7209199242706052437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +99,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &-6340005902316183159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/grannyHit
+  m_EditorClassIdentifier: 
+  Path: event:/grannyHit
+  Guid:
+    Data1: 689916951
+    Data2: 1288426890
+    Data3: 284229807
+    Data4: -615946896
+  Banks:
+  - {fileID: -7673059333017943249}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3884937985148212212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,16 +208,17 @@ MonoBehaviour:
   - {fileID: 6837057405411527313}
   EditorEvents:
   - {fileID: 4750622960517513118}
-  - {fileID: -9111537383652728549}
-  - {fileID: 152035159726462846}
-  - {fileID: 4956348021647271654}
-  - {fileID: -159366780059563794}
+  - {fileID: 421447692646194426}
+  - {fileID: 3067286620813074308}
+  - {fileID: 8890144235705269030}
+  - {fileID: -940274748020589528}
+  - {fileID: -6340005902316183159}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1143411681569652984}
   StringsBanks:
   - {fileID: 6110491174365850515}
-  cacheTime: 638300560676020740
+  cacheTime: 638300450493677726
   cacheVersion: 131605
 --- !u!114 &110989997333758891
 MonoBehaviour:
@@ -236,7 +282,7 @@ MonoBehaviour:
   Path: Assets/fmod_banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638300560675920723
+  lastModified: 638300450492308797
   FileSizes: []
   Exists: 1
 --- !u!114 &1363223039421753438
@@ -255,6 +301,24 @@ MonoBehaviour:
   Name: sfx_bank
   StudioPath: bank:/sfx_bank
   lastModified: 638297967200062904
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1929825602985856756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/musicBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/fmod_banks/Desktop/musicBank.bank
+  Name: musicBank
+  StudioPath: bank:/musicBank
+  lastModified: 638300450492998258
   FileSizes: []
   Exists: 1
 --- !u!114 &2885939318375102306
@@ -329,33 +393,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 240
---- !u!114 &4956348021647271654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/menuClick
-  m_EditorClassIdentifier: 
-  Path: event:/menuClick
-  Guid:
-    Data1: 408393352
-    Data2: 1305317314
-    Data3: -873629026
-    Data4: -1979127778
-  Banks:
-  - {fileID: 6837057405411527313}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6110491174365850515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,26 +408,8 @@ MonoBehaviour:
   Path: Assets/fmod_banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638300560675920723
+  lastModified: 638300450492368862
   FileSizes:
   - Name: 
-    Value: 1046
-  Exists: 1
---- !u!114 &6837057405411527313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/sfxBank.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/fmod_banks/Desktop/sfxBank.bank
-  Name: sfxBank
-  StudioPath: bank:/sfxBank
-  lastModified: 638300560676020740
-  FileSizes: []
+    Value: 1126
   Exists: 1
