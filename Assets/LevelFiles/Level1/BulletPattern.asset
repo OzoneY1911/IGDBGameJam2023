@@ -62,7 +62,8 @@ MonoBehaviour:
   - {fileID: 4933814182034037451, guid: fcba3b7981589344e915112e28074c47, type: 3}
   - {fileID: 8673278080035048957, guid: 7456d09d597d63945b0fecd8788772eb, type: 3}
   - {fileID: 7761471470392701343, guid: 175be524c3da52041a6c67fb82db20a0, type: 3}
-  BPM: 165
+  BPM: 120
+  offset: 0
   FirstStand: {x: 5, y: 1.5}
   SecondStand: {x: 4.55, y: -3.26}
   MaxBulletHeight: 3.4
@@ -72,122 +73,278 @@ MonoBehaviour:
   SongLength: 100
   bulletPatterns:
   - Type: 0
-    BeatWhenReachPlayer: 4
+    BeatWhenReachPlayer: 1
     MicroBeatWhenReachPlayer: 0
     Speed: 10
-    Size: 2
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 1
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1
+  - Type: 0
+    BeatWhenReachPlayer: 2
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0.15
+  - Type: 0
+    BeatWhenReachPlayer: 2
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 2
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 2
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 2
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 2
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 3
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
     CentreSideDeviation: -0.5
   - Type: 0
-    BeatWhenReachPlayer: 4
-    MicroBeatWhenReachPlayer: 0
+    BeatWhenReachPlayer: 3
+    MicroBeatWhenReachPlayer: 2
     Speed: 10
-    Size: 2
+    Size: 1
     CentreSideDeviation: 0.5
   - Type: 0
-    BeatWhenReachPlayer: 5
+    BeatWhenReachPlayer: 4
     MicroBeatWhenReachPlayer: 1
-    Speed: 12
+    Speed: 10
     Size: 1
-    CentreSideDeviation: 0.25
+    CentreSideDeviation: 0.5
   - Type: 0
-    BeatWhenReachPlayer: 5
+    BeatWhenReachPlayer: 4
     MicroBeatWhenReachPlayer: 1
-    Speed: 12
-    Size: 1
-    CentreSideDeviation: -0.25
-  - Type: 0
-    BeatWhenReachPlayer: 6
-    MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
+    BeatWhenReachPlayer: 5
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 5
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1
+  - Type: 0
     BeatWhenReachPlayer: 6
     MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    Speed: 10
     Size: 1
-    CentreSideDeviation: 0
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 6
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1
   - Type: 0
     BeatWhenReachPlayer: 7
-    MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
     Size: 1
     CentreSideDeviation: -1
   - Type: 0
     BeatWhenReachPlayer: 7
-    MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
     Size: 1
-    CentreSideDeviation: 0.78
+    CentreSideDeviation: 1
   - Type: 0
-    BeatWhenReachPlayer: 8
-    MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    BeatWhenReachPlayer: 7
+    MicroBeatWhenReachPlayer: 3
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 7
+    MicroBeatWhenReachPlayer: 3
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
     BeatWhenReachPlayer: 8
     MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
-    BeatWhenReachPlayer: 9
+    BeatWhenReachPlayer: 8
     MicroBeatWhenReachPlayer: 0
-    Speed: 12
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 8
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 8
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 10
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
     Size: 1
     CentreSideDeviation: -1
   - Type: 0
-    BeatWhenReachPlayer: 9
-    MicroBeatWhenReachPlayer: 0
-    Speed: 12
-    Size: 1
-    CentreSideDeviation: 0.6
-  - Type: 0
-    BeatWhenReachPlayer: 9
-    MicroBeatWhenReachPlayer: 2
-    Speed: 12
-    Size: 1
-    CentreSideDeviation: -0.2
-  - Type: 0
-    BeatWhenReachPlayer: 9
-    MicroBeatWhenReachPlayer: 2
-    Speed: 12
-    Size: 1
-    CentreSideDeviation: 0.2
-  - Type: 0
     BeatWhenReachPlayer: 10
     MicroBeatWhenReachPlayer: 0
-    Speed: 20
+    Speed: 10
     Size: 1
-    CentreSideDeviation: 0
+    CentreSideDeviation: 1
   - Type: 0
     BeatWhenReachPlayer: 10
-    MicroBeatWhenReachPlayer: 0
-    Speed: 20
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
     BeatWhenReachPlayer: 10
     MicroBeatWhenReachPlayer: 1
-    Speed: 20
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
     BeatWhenReachPlayer: 10
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 10
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 12
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 12
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1
+  - Type: 0
+    BeatWhenReachPlayer: 12
     MicroBeatWhenReachPlayer: 1
-    Speed: 20
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
-    BeatWhenReachPlayer: 10
-    MicroBeatWhenReachPlayer: 2
-    Speed: 20
+    BeatWhenReachPlayer: 12
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
   - Type: 0
-    BeatWhenReachPlayer: 10
+    BeatWhenReachPlayer: 12
     MicroBeatWhenReachPlayer: 2
-    Speed: 20
+    Speed: 10
     Size: 1
     CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 12
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0
+  - Type: 0
+    BeatWhenReachPlayer: 14
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 14
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0.8
+  - Type: 0
+    BeatWhenReachPlayer: 14
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -0.5
+  - Type: 0
+    BeatWhenReachPlayer: 14
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 0.4
+  - Type: 0
+    BeatWhenReachPlayer: 15
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 15
+    MicroBeatWhenReachPlayer: 0
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1
+  - Type: 0
+    BeatWhenReachPlayer: 15
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 15
+    MicroBeatWhenReachPlayer: 1
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1
+  - Type: 0
+    BeatWhenReachPlayer: 15
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: -1
+  - Type: 0
+    BeatWhenReachPlayer: 15
+    MicroBeatWhenReachPlayer: 2
+    Speed: 10
+    Size: 1
+    CentreSideDeviation: 1

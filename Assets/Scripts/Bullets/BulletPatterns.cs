@@ -11,6 +11,7 @@ public class BulletPatterns : ScriptableObject
 
 	// beats per minute
 	public float BPM;
+	public float offset = 0f;
 	// coordinates of the stand where music spawns in the playing field
 	public Vector2 FirstStand;
 	public Vector2 SecondStand;
@@ -41,7 +42,8 @@ public class BulletPatterns : ScriptableObject
 		Standart,
 		HpIncrease,
 		SlowTime,
-		BiggerInvisiblePlayer
+		BiggerInvisiblePlayer,
+		FreeMovement
 	}
 
 	// every bullet can be described in this class
@@ -101,7 +103,7 @@ public class BulletPatterns : ScriptableObject
 			isFirstStandUse = !isFirstStandUse;
 			pattern.StartTransform = (pattern.isFirstStand ? FirstStand : SecondStand);
 			pattern.EndPosition = new Vector2(LeftBoundOfPlayingField - 1, Mathf.Lerp(MinBulletHeight, MaxBulletHeight, (pattern.CentreSideDeviation + 1f) / 2f));
-			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat;
+			pattern.ReachTime = pattern.BeatWhenReachPlayer * TimeBetweenEveryBeat + pattern.MicroBeatWhenReachPlayer * TimeBetweenEveryMicroBeat + offset;
 			pattern.distantionToPass = GetDistanceBetweenTwoPoints(pattern.StartTransform, pattern.EndPosition);
 			pattern.TimeWhenReleased = pattern.ReachTime;
 			pattern.Sprite = (pattern.Type == BulletType.Standart ? NotColoredNotes[UnityEngine.Random.Range(0, NotColoredNotes.Length)] : ColoredNotes[UnityEngine.Random.Range(0, ColoredNotes.Length)]);

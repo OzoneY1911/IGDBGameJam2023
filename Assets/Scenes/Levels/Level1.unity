@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BulletPrefab: {fileID: 423684018591404009, guid: fde2a3314029afb4095fd07a6aaa8c10, type: 3}
-  _BulletPatterns: {fileID: 11400000, guid: 5217292dd5428284f9e0ea56f0938a80, type: 2}
+  _BulletPatterns: {fileID: 11400000, guid: 15df6e683e140a4409e3491c9d39426c, type: 2}
   WinCanvas: {fileID: 1616489326}
   Player: {fileID: 1507004034}
 --- !u!4 &1147996354

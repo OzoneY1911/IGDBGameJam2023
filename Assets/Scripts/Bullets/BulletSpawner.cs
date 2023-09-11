@@ -24,7 +24,7 @@ public class BulletSpawner : MonoBehaviour
 	{
 		// inits
 		BulletsPool = new ObjectPool<GameObject>(() => Instantiate(_BulletPrefab));
-		StartTime = Time.time;
+		StartTime = Time.time + _BulletPatterns.offset;
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
 		{
 			bulletPattern.IsSpawned = false;
