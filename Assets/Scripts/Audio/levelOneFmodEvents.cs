@@ -5,6 +5,9 @@ using FMODUnity;
 
 public class levelOneFmodEvents : MonoBehaviour
 {
+    [field: Header("grannySfx")]
+    [field: SerializeField] public EventReference grannyHit { get; private set; }
+
     public static levelOneFmodEvents instance { get; private set; }
 
     private void Awake()
