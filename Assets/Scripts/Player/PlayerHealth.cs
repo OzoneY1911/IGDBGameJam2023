@@ -16,10 +16,8 @@ public class PlayerHealth : MonoBehaviour
 			}
 			else
 				HealthPoints = 3;
-			if (HealthPoints <= 0)
-#if !ISDEBUG
-				Death();
-#endif
+			//if (HealthPoints <= 0)
+				//Death();
 		}
 	}
 
