@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 			LevelLoader.instance.LoadLevel("Level1");
 		}
 
-		if (Input.GetKey(KeyCode.Escape))
+		if (Input.GetKey(KeyCode.Tab))
 		{
 			LevelLoader.instance.LoadLevel("MainMenu");
 		}
