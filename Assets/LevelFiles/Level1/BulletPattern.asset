@@ -12,20 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea38ee38e494fc459b8589ddb47102f, type: 3}
   m_Name: BulletPattern
   m_EditorClassIdentifier: 
-  NotColoredNotes:
-  - {fileID: 2676657208596534927, guid: 8e0514e3b41fab94dbed3e4b7741a896, type: 3}
-  - {fileID: -1524403568687853666, guid: 40171c58996639b409d83685bd6378c1, type: 3}
-  - {fileID: 4017642311414410594, guid: 20dccd29847a31041a18082ac762f6c8, type: 3}
-  - {fileID: 3083306177978020983, guid: 4a93a32dabf0f3048ab59b63f10c458e, type: 3}
-  - {fileID: -2926216615647648594, guid: 069f1cf74b92a564e8e0e24cdd2da7d6, type: 3}
-  - {fileID: -8526715565622828212, guid: 15822f885da881a4daf683757ec9db2d, type: 3}
-  - {fileID: 4885979239947719260, guid: b3159a74040735045b05b3737c0b56dc, type: 3}
-  - {fileID: 5903860252164157616, guid: 93dabc76a2edb8945a8c1e43d761eae1, type: 3}
-  - {fileID: 3943164060871214869, guid: e6f76b0a80127e54a85a27283fa92d46, type: 3}
-  - {fileID: 5324743395115037555, guid: 5c4fb4be49434974cae321a02971db16, type: 3}
-  - {fileID: 4970337552101917558, guid: 96949da8d00e93d4e9d917bb14359ee9, type: 3}
-  - {fileID: 6041124021791173589, guid: 944b72359b200074a9fc376d69908e62, type: 3}
-  - {fileID: -8637307708708382673, guid: 9e623748dd7da9c4eae9ab5b8e91d2b6, type: 3}
   ColoredNotes:
   - {fileID: 7730488079629697181, guid: 750641b847c2402479cda71f7861117f, type: 3}
   - {fileID: -3395175862906719768, guid: 2e4f6d5642ece8b4bbc323119614f846, type: 3}
@@ -74,6 +60,7 @@ MonoBehaviour:
   MinBulletHeight: -4
   PlayerMovementCentre: {x: -5.81, y: -1.16}
   LeftBoundOfPlayingField: -8
+  SongLength: 116
   bulletPatterns:
   - Type: 0
     BeatWhenReachPlayer: 1
