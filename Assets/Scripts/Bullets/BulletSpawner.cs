@@ -46,6 +46,7 @@ public class BulletSpawner : MonoBehaviour
 			this.enabled = false;
 			GameController.instance.enabled = false;
 			WinCanvas.SetActive(true);
+			Cursor.visible = true;
 		}
 
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
