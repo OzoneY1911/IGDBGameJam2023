@@ -590,9 +590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1572583332}
   musicClips:
-  - {fileID: 8300000, guid: 7d8af537c5756024fa1cd64656f35990, type: 3}
-  - {fileID: 8300000, guid: 9486703b7c60b944e95a3cf6fdad7c19, type: 3}
   - {fileID: 8300000, guid: 88a42c4ce46eb3a44b358f02ef4ca55d, type: 3}
+  - {fileID: 8300000, guid: 9486703b7c60b944e95a3cf6fdad7c19, type: 3}
+  - {fileID: 8300000, guid: 7d8af537c5756024fa1cd64656f35990, type: 3}
   sfxSource: {fileID: 330885321}
   sfxClips:
   - {fileID: 8300000, guid: fc89ee1ca5238da4291cddae10d5d2bc, type: 3}
@@ -2721,7 +2721,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7d8af537c5756024fa1cd64656f35990, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 88a42c4ce46eb3a44b358f02ef4ca55d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
