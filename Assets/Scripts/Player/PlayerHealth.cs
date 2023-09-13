@@ -9,11 +9,11 @@ public class PlayerHealth : MonoBehaviour
 	{
 		get { return HealthPoints; }
 		set {
-			if ( value < 3) {
+			if ( value < 3)
 				HealthPoints = value;
-			}
 			else
 				HealthPoints = 3;
+
 			if (HealthPoints <= 0)
 				Death();
 		}
