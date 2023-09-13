@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Move on Arc")]
     [SerializeField] GameObject arcCenter;
-    [SerializeField] float rotationSpeed = 0.25f;
+    [SerializeField] float rotationSpeed = 0.05f;
     [SerializeField] float maximalAngle = 60;
     float rotationAngle;
 
