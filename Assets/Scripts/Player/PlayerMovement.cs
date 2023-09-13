@@ -41,12 +41,12 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Input.GetKey(KeyCode.R))
 		{
-			LevelLoader.instance.LoadLevel("Scenes/Levels/Level1");
+			LevelLoader.instance.LoadLevel("Level1");
 		}
 
 		if (Input.GetKey(KeyCode.Escape))
 		{
-			LevelLoader.instance.LoadLevel("Scenes/MainMenu");
+			LevelLoader.instance.LoadLevel("MainMenu");
 		}
 
 		if (!resettingPosition)

@@ -11,11 +11,11 @@ public class ButtonAudio : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        MenuAudioManager.instance.PlaySound(MenuFMODEvents.instance.hover_button, transform.position);
+        AudioManager.instance.PlaySFX(AudioManager.sfxEnum.menuHover);
     }
 
     public void ClickButton()
     {
-        MenuAudioManager.instance.PlaySound(MenuFMODEvents.instance.click_button, transform.position);
+        AudioManager.instance.PlaySFX(AudioManager.sfxEnum.menuClick);
     }
 }
