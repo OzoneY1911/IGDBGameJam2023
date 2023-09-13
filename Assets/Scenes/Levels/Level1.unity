@@ -1661,7 +1661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BulletPrefab: {fileID: 423684018591404009, guid: fde2a3314029afb4095fd07a6aaa8c10, type: 3}
-  _BulletPatterns: {fileID: 11400000, guid: 15df6e683e140a4409e3491c9d39426c, type: 2}
+  _BulletPatterns: {fileID: 11400000, guid: b9593c00cc6e87e4eae3f35afef38421, type: 2}
   WinCanvas: {fileID: 106276441}
   Player: {fileID: 1507004034}
 --- !u!4 &1147996354
@@ -1857,13 +1857,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc33eb00a7ff644abf9f8d7f012f6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-    <grannyHit>k__BackingField:
+  <grannyHit>k__BackingField:
     Guid:
-      Data1: 689916951
-      Data2: 1288426890
-      Data3: 284229807
-      Data4: -615946896
-    Path: event:/grannyHit
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1269465740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2010,7 @@ GameObject:
   - component: {fileID: 1503348917}
   - component: {fileID: 1503348916}
   - component: {fileID: 1503348919}
+  - component: {fileID: 1503348920}
   m_Layer: 0
   m_Name: audioManager
   m_TagString: Untagged
@@ -2096,6 +2097,18 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1503348920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503348915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e22128a8177a5428f625e396c613c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1507004034
 GameObject:
   m_ObjectHideFlags: 0
