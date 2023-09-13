@@ -9,12 +9,22 @@ public class PlayerHealth : MonoBehaviour
 	{
 		get { return HealthPoints; }
 		set {
-      if ( value < 3) {
-          HealthPoints = value;
-          levelOneAudioManager.instance.playOneShot(levelOneFmodEvents.instance.grannyHit, this.transform.position);
-      }
+			if ( value < 3) 
+			{
+				if (value < HealthPoints)
+                {
+                    AudioManager.instance.PlaySFX(AudioManager.sfxEnum.grannyHit);
+                }
+				HealthPoints = value;
+			}
+
+			if ( value < 3) 
+			{
+				HealthPoints = value;
+			}
 			else
 				HealthPoints = 3;
+
 			if (HealthPoints <= 0)
 				Death();
 		}

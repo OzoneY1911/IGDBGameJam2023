@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.Pool;
 using static BulletPatterns;
+
 
 // singletone class that spawns bullet in the playing field
 public class BulletSpawner : MonoBehaviour

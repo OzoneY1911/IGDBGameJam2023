@@ -39,7 +39,17 @@ public class PlayerMovement : MonoBehaviour
             ToggleFreeMovement();
         }
 
-        if (!resettingPosition)
+		if (Input.GetKey(KeyCode.R))
+		{
+			LevelLoader.instance.LoadLevel("Level1");
+		}
+
+		if (Input.GetKey(KeyCode.Tab))
+		{
+			LevelLoader.instance.LoadLevel("MainMenu");
+		}
+
+		if (!resettingPosition)
         {
             if (!freeMovement)
             {
