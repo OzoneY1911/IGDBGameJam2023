@@ -20,16 +20,19 @@ public class PlayerEffects : MonoBehaviour
 		if (!collision.gameObject.CompareTag("Note"))
 			return;
 
-		if (IsImmortal)
+		BulletType effectType = collision.gameObject.GetComponent<Note>().Type;
+
+		if (IsImmortal && effectType == BulletType.Standart)
 		{
 			collision.gameObject.SetActive(false);
 			BulletSpawner.instance.AddBulletToPool(collision.gameObject);
 			return;
 		}
 
-		switch (collision.gameObject.GetComponent<Note>().Type)
+		switch (effectType)
 		{
 			case BulletType.Standart:
+				AudioManager.instance.PlaySFX(AudioManager.sfxEnum.grannyHit);
 				GetComponent<PlayerHealth>().Health -= 1;
 				StartCoroutine(ChangePlayerColor(0.2f, DamagedColor));
 				break;

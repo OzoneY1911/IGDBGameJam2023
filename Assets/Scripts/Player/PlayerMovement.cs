@@ -34,10 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ToggleFreeMovement();
-        }
 
 		if (Input.GetKey(KeyCode.R))
 		{

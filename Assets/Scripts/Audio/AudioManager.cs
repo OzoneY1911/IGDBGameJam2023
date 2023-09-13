@@ -7,13 +7,6 @@ public class AudioManager : MonoBehaviour
 {
     internal static AudioManager instance;
 
-    public enum musicEnum
-    {
-        menuMusic,
-        beatOne,
-        beatTwo
-    }
-
     public enum sfxEnum
     {
         menuHover,
@@ -24,7 +17,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Music")]
     public AudioSource musicSource;
-    [SerializeField] AudioClip[] musicClips;
 
     [Header("SFX")]
     [SerializeField] AudioSource sfxSource;
@@ -43,18 +35,17 @@ public class AudioManager : MonoBehaviour
         InitVolume();
     }
 
-    public void PlayMusic(musicEnum enumClip)
+    public void StopMusic()
     {
-        musicSource.clip = musicClips[(int)enumClip];
-        musicSource.Play();
+        musicSource.Stop();
     }
 
-    public void PlaySFX(sfxEnum enumClip)
-    {
-        sfxSource.PlayOneShot(sfxClips[(int)enumClip]);
-    }
+	public void PlaySFX(sfxEnum enumClip)
+	{
+		sfxSource.PlayOneShot(sfxClips[(int)enumClip]);
+	}
 
-    public void SetMusicVolume()
+	public void SetMusicVolume()
     {
         PlayerPrefs.SetFloat("Music Volume", musicVolumeSlider.value);
         musicSource.volume = musicVolumeSlider.value;

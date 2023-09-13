@@ -12,17 +12,7 @@ public class LevelLoader : MonoBehaviour
 
 	public void LoadLevel(string levelName)
 	{
-        SceneManager.LoadScene(levelName);
-
-        switch (levelName)
-		{
-			case "MainMenu":
-                Destroy(AudioManager.instance.gameObject);
-				break;
-            case "Level1":
-                AudioManager.instance.PlayMusic(AudioManager.musicEnum.beatOne);
-				AudioManager.instance.musicSource.loop = false;
-                break;
-        }
+		AudioManager.instance.StopMusic();
+		SceneManager.LoadScene(levelName);
     }
 }
