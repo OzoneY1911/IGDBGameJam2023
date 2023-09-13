@@ -218,7 +218,7 @@ MonoBehaviour:
   - {fileID: 1143411681569652984}
   StringsBanks:
   - {fileID: 6110491174365850515}
-  cacheTime: 638300450493677726
+  cacheTime: 638300598834904345
   cacheVersion: 131605
 --- !u!114 &110989997333758891
 MonoBehaviour:
@@ -282,7 +282,7 @@ MonoBehaviour:
   Path: Assets/fmod_banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638300450492308797
+  lastModified: 638300598834531398
   FileSizes: []
   Exists: 1
 --- !u!114 &1363223039421753438
@@ -365,7 +365,7 @@ MonoBehaviour:
   StudioPath: bank:/musicBank
   lastModified: 638300560676010734
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &4750622960517513118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
   Path: Assets/fmod_banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638300450492368862
+  lastModified: 638300598834571271
   FileSizes:
   - Name: 
     Value: 1126

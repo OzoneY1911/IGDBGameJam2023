@@ -25,29 +25,10 @@ public class BulletSpawner : MonoBehaviour
 		// inits
 		BulletsPool = new ObjectPool<GameObject>(() => Instantiate(_BulletPrefab));
 		StartTime = Time.time + _BulletPatterns.offset;
-#if !ISDEBUG
 		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
 		{
 			bulletPattern.IsSpawned = false;
 		}
-#else
-		int maxBeat = 0;
-		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
-		{
-			if (bulletPattern.BeatWhenReachPlayer > maxBeat)
-				maxBeat = bulletPattern.BeatWhenReachPlayer;
-			bulletPattern.IsSpawned = false;
-		}
-
-		foreach (var bulletPattern in _BulletPatterns.bulletPatterns)
-		{
-			if (bulletPattern.BeatWhenReachPlayer < Mathf.Max(0, maxBeat - 8))
-				bulletPattern.IsSpawned = true;
-		}
-		StartTime -= _BulletPatterns.TimeBetweenEveryBeat / 1000 * Mathf.Max(0, maxBeat - 8);
-		GetComponent<AudioSource>().time = _BulletPatterns.TimeBetweenEveryBeat / 1000 * Mathf.Max(0, maxBeat - 8);
-		GetComponent<AudioSource>().Play();
-#endif
 	}
 
 	void Update()
