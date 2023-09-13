@@ -54,8 +54,8 @@ MonoBehaviour:
   - {fileID: 7761471470392701343, guid: 175be524c3da52041a6c67fb82db20a0, type: 3}
   BPM: 120
   offset: 0.04
-  FirstStand: {x: 5, y: 1.5}
-  SecondStand: {x: 4.55, y: -3.26}
+  FirstStand: {x: 5, y: 1}
+  SecondStand: {x: 4.55, y: -2.8}
   MaxBulletHeight: 3.4
   MinBulletHeight: -4
   PlayerMovementCentre: {x: -5.81, y: -1.16}
