@@ -18,12 +18,10 @@ public class LevelLoader : MonoBehaviour
 		{
 			case "MainMenu":
                 Destroy(AudioManager.instance.gameObject);
-                Cursor.visible = true;
                 break;
             case "Level1":
                 AudioManager.instance.PlayMusic(AudioManager.musicEnum.beatOne);
 				AudioManager.instance.musicSource.loop = false;
-				Cursor.visible = false;
                 break;
         }
     }
