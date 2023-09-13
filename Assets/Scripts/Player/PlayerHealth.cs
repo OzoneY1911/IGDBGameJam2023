@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 		BulletSpawner.instance.enabled = false;
 		GameController.instance.enabled = false;
 		DeathCanvas.SetActive(true);
+		Cursor.visible = true;
 	}
 
 }
